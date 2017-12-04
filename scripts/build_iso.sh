@@ -2,6 +2,9 @@
 
 set -xe
 
+#generate initrd.img
+bash initrd.sh
+
 ISODIR=../iso/
 cd $ISODIR
 

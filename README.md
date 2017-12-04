@@ -1,5 +1,4 @@
-# thegathering
+# the gathering
 
-Self-building linux distribution.
-
-Use at your own risk.
+Self-building linux distribution
+based on Fabrice Bellard's tccboot.

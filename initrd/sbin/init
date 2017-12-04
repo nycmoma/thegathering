@@ -1,0 +1,32 @@
+#!/bin/sh
+
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/X11R6/bin:/usr/local/bin
+mount -n -t ramfs none /var
+mount -n -t proc none /proc
+mkdir /var/log
+mkdir /var/run
+mkdir /var/tmp
+mount -n -a
+
+echo ""
+cat /proc/version
+echo ""
+echo "TCCBOOT Linux test distribution (based on Redhat 9)"
+echo ""
+echo "Type 'exit' to halt the system"
+echo ""
+
+/sbin/ifconfig lo 127.0.0.1
+#/sbin/ifconfig eth0 guest-vmnet
+#/sbin/route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.0.2.2
+
+export DISPLAY=host-vmnet:0
+export HOME=/root
+cd $HOME
+
+/bin/sh
+
+umount -a
+
+/sbin/reboot -f
+

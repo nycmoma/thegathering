@@ -1,0 +1,2 @@
+#!/bin/sh
+loadkeys /lib/kbd/fr-pc.map
